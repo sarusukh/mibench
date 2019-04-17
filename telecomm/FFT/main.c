@@ -52,11 +52,11 @@ int main(int argc, char *argv[]) {
 		 /* randomly select sin or cos */
 		 if (rand()%2)
 		 {
-		 		RealIn[i]+=coeff[j]*cos(amp[j]*i);
+		 		RealIn[i]+=coeff[j]*cosf(amp[j]*i);
 			}
 		 else
 		 {
-		 	RealIn[i]+=coeff[j]*sin(amp[j]*i);
+		 	RealIn[i]+=coeff[j]*sinf(amp[j]*i);
 		 }
   	 ImagIn[i]=0;
 	 }
