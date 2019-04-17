@@ -31,6 +31,8 @@
 
 #define BITS_PER_WORD   (sizeof(unsigned) * 8)
 
+void main()
+{
 
 int IsPowerOfTwo ( unsigned x )
 {
@@ -89,7 +91,7 @@ double Index_to_frequency ( unsigned NumSamples, unsigned Index )
         return (double)Index / (double)NumSamples;
 
     return -(double)(NumSamples-Index) / (double)NumSamples;
-}
+}}
 
 
 /*--- end of file fftmisc.c---*/
