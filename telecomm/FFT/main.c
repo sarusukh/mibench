@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
 		exit(-1);
 	}
 	else if (argc==4)
-		invfft = !strncmp(argv[3],"-i",2);
+		invfft =! strncmp(argv[3],"-i",2);
 	MAXSIZE=atoi(argv[2]);
 	MAXWAVES=atoi(argv[1]);
 		
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
  }
 
  /* regular*/
- fft_float (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
+ fftfloat (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
  
  printf("RealOut:\n");
  for (i=0;i<MAXSIZE;i++)
