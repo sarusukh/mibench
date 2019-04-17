@@ -25,7 +25,7 @@
 #include "ddcmath.h"
 
 #define CHECKPOINTER(p)  CheckPointer(p,#p)
-
+void main(){
 static void CheckPointer ( void *p, char *name )
 {
     if ( p == NULL )
@@ -47,6 +47,8 @@ void fft_float (
     unsigned NumBits;    /* Number of bits needed to store indices */
     unsigned i, j, k, n;
     unsigned BlockSize, BlockEnd;
+    int IsPowerOfTwo;
+    int NumberOfBitsNeeded;
 
     double angle_numerator = 2.0 * DDC_PI;
     double tr, ti;     /* temp real, temp imaginary */
@@ -68,7 +70,7 @@ void fft_float (
     CHECKPOINTER ( RealOut );
     CHECKPOINTER ( ImagOut );
 
-    NumBits = NumberOfBitsNeeded ( NumSamples );
+    NumBits = NumberOfBitsNeeded(NumSamples );
 
     /*
     **   Do simultaneous data copy and bit-reversal ordering into outputs...
@@ -89,10 +91,10 @@ void fft_float (
     for ( BlockSize = 2; BlockSize <= NumSamples; BlockSize <<= 1 )
     {
         double delta_angle = angle_numerator / (double)BlockSize;
-        double sm2 = sin ( -2 * delta_angle );
-        double sm1 = sin ( -delta_angle );
-        double cm2 = cos ( -2 * delta_angle );
-        double cm1 = cos ( -delta_angle );
+        double sm2 = double sin ( -2 * delta_angle );
+        double sm1 = double sin ( -delta_angle );
+        double cm2 = double cos ( -2 * delta_angle );
+        double cm1 = double cos ( -delta_angle );
         double w = 2 * cm1;
         double ar[3], ai[3];
         double temp;
@@ -144,7 +146,7 @@ void fft_float (
             ImagOut[i] /= denom;
         }
     }
-}
+}}
 
 
 /*--- end of file fourierf.c ---*/
