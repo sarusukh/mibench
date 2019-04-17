@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
 	float *coeff;
 	float *amp;
 	int invfft=0;
+	float *fftfloat;
 
 	if (argc<3)
 	{
@@ -62,7 +63,7 @@ int main(int argc, char *argv[]) {
  }
 
  /* regular*/
- float fftfloat (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
+ fftfloat (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
  
  printf("RealOut:\n");
  for (i=0;i<MAXSIZE;i++)
